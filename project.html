@@ -4,11 +4,16 @@
         <meta charset="utf-8">
         <title>世界の天気</title>
     </head>
+    <img class="spacecraft" src="https://g384072023.github.io/medialabo/practice-html/world-forecas-top-0.jpg">
+    <h1>世界の天気（検索結果1件）</h1>
+    <ul>
+    <li>都市名: 上海市</li>
+    </ul>
     <table>
-        <caption>
-            上海の天気
-        </caption>
-        <thead>
+            <tr>
+                <th scope="col">上海の天気</th>
+            </tr>
+        <tbody>
             <tr>
                 <th scope="col">緯度</th>
                 <td>31.23</td>
@@ -19,21 +24,27 @@
             </tr>
             <tr>
                 <th scope="col">天気</th>
-                <td><img class="晴時々曇" src="晴時々曇</td>
+                <td><img class="晴時々曇" src="https://g384072023.github.io/medialabo/practice-html/02.png">晴時々曇</td>
             </tr>
-                <th scope="col">最低気温: 19℃</th>
-                <th scope="col">最高気温: 24℃</th>
-                <th scope="col">湿度: 70%</th>
-                <th scope="col">風速: 2m/s</th>
-                <th scope="col">風向: 北西</th>
+                <th scope="col">最低気温</th>
+                <td>19℃</td>
+            <tr>
+                <th scope="col">最高気温</th>
+                <td>24℃</td>
             </tr>
-        </thead>
-        <img
-		class="spacecraft"
-		src="https://g384072023.github.io/medialabo/practice-html/world-forecas-top-0.jpg">
-    <h1>世界の天気（検索結果1件）</h1>
-    <ul>
-    <li>都市名: 上海市</li>
-    </ul>
+            <tr>
+                <th scope="col">湿度</th>
+                <td>70%</td>
+            </tr>
+            <tr>
+                <th scope="col">風速</th>
+                <td>2m/s</td>
+            </tr>
+                <th scope="col">風向</th>
+                <td>北西</td>
+            </tr>
+        </tbody>
+        <tfoot>
+        </tfoot>
     </table>
-    </html>
+</html>
