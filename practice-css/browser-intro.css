@@ -13,10 +13,10 @@ h1 {
 }
 
 h2 {
-	color: #3f3faf;
+	color:#3f3faf;
 	margin: 5px;
-	font-family:cursive;
-	background-color:linear-gradient(to right,white,#ffefaf)
+	font-family: cursive;
+	background:linear-gradient(to right,white,#ffefaf)
 }
 
 div#zentai {
