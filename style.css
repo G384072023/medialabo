@@ -15,7 +15,7 @@ body{
     stroke-width:1;
     stroke-dasharray:10 800;
     stroke-dashoffset:10;
-    animation:3s linear 0s drawing
+    animation:8s linear 0s drawing
         forwards
 }
 @keyframes drawing{
