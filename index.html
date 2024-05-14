@@ -1,12 +1,33 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>My test page</title>
     <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <p><h1>「Webコンテンツ作成」の成果</h1>
+</head>
+<body>
+  <div class="background"></div>
+  <div class="web">
+    <svg width="100%" height="auto" class="text">
+      <text class="title" x="20%" y="50%">「Webコンテンツ作成」の成果</text>
+      <defs>
+        <linearGradient id="geekColor" gradientTransform="rotate(90)">
+          <stop offset="0%" stop-color="#0abf53"></stop>
+          <animate 
+          attributeName="stop-color"
+          values="#9013fe;#0abf53;#9013fe"
+          dur="10s"
+          begin="3s"
+          repeatCount="indefinite">
+          </animate>
+          <stop offset="100%" stop-color="#9013fe"></stop>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+    <nav1>
       <h2>本テーマについて</h2>
       (ここにはこのテーマの学習の目的と目標を記載してください，シラバスを参考にしましょう.)(100文字)
       <h2>プロジエクト課題について</h2>
@@ -15,12 +36,17 @@
       <h2>数当てゲーム</h2>
       (このテーマの第3回から数当てゲームを作りますので,そのあとにゲームの概要を説明してください)(200文字以上)<br>
       数当てゲームのページ:<a href="https://g384072023.github.io/medialabo/practice-html/kazuate.html" title="kazuate.html" target="_blank">kazuate.html</a>
-      <h2>各授業回の学習事項</h2>
-      <h3>第1回 WWW と HTML</h3>
-      今日はHTMLの基礎を勉強しました。HTMLはウェブページの構造を記述する言語で、要素にはブロック要素とインライン要素があります。また、HTML要素リファレンスでは簡易のエディタと出力画面があり、豊富な使用例と詳細な説明が日本語で提供されています。プログラムをコンパイルする際にはエラーが発生しますが、HTMLにはコンパイルがありません。ブラウザはHTMLの書き間違いに対して非常に寛容です。少し間違っていても、ブラウザは期待通りのページを表示してくれます。<br>演習の成果: <a href="https://g384072023.github.io/medialabo/practice-html/elements.html" title="elements.html" target="_blank">演習1-4: HTMLのさまさまな要素</a>
-      <h3>第2回 CSS による Web ペ-ジの装飾</h3>
-      <h3>第3回 JavaScript の基本</h3>
-      <h3>第4回 DOM と JavaScript</h3>
-      <h3>第5回 イベント処理</h3></p>
-  </body>
+    <nav1>
+    <nav>
+      <div class="cards">
+        <div class="card" style="--i:2.5;"><b>第5回</b> <br>イベント処理</div>
+        <div class="card" style="--i:1.5;"><b>第4回</b> <br>DOM と JavaScript</div>
+        <div class="card" style="--i:0.5;"><b>第3回</b> <br>JavaScript の基本</div>
+        <div class="card" style="--i:-0.5;"><b>第2回</b> <br>CSSによるWebページの装飾<p>CSSを用いてWebページの見た目を整える方法を学びます。CSSは色やフォント、レイアウトを指定でき、HTMLの構造を引き立てます。セレクタやプロパティ、値の基本を理解し、実際にスタイルを適用することで、視覚的に魅力的なWebページを作成する技術を習得します。<br>演習の成果: <a href="https://g384072023.github.io/medialabo/practice-css/browser-intro.html" title="browser-intro.html" target="_blank">演習2-3: ウェブブラウザの紹介</a></div></p>
+        <div class="card" style="--i:-1.5;" ><b>第1回</b> <br>WWW と HTML<p>HTMLはウェブページの構造を記述する言語で、要素にはブロック要素とインライン要素があります。HTML要素リファレンスでは使用例と説明が日本語で提供され、簡易エディタもあります。HTMLはコンパイル不要で、ブラウザは書き間違いに寛容で、多少のエラーでも期待通りに表示します。<br>演習の成果: <a href="https://g384072023.github.io/medialabo/practice-html/elements.html" title="elements.html" target="_blank">演習1-4: HTMLのさまさまな要素</a></div></p>
+        <div class="card" style="--i:-2.5;">各授業回の<br>学習事項</div>
+      </div>
+      
+    </nav>
+</body>
 </html>
