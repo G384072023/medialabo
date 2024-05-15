@@ -1,0 +1,23 @@
+p {
+	color: navy;
+}
+
+h1 {
+	color: white;
+    font-size:36px;
+	text-shadow: navy 1px 0 10px;
+}
+
+table {
+	font-family: cursive;
+	color:#3f3faf;
+	margin: 50px;
+    font-size:28px;
+}
+html{
+    background: linear-gradient(to left, white, skyblue);
+}
+.tennki{
+    float:right;
+}
+ 
