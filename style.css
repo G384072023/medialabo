@@ -1,21 +1,31 @@
 body{
-    background:#F5CBA7;
+    background:linear-gradient(125deg,#2c3e50,#27ae60,#2980b9,#e74c3c,#8e44ad);
+    background-size: 500%;
+    margin:0;
+    padding:0;
+    height:140vh;
+    animation: beAnimation 15s linear infinite;
 }
-.container{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    height:200px;
+@keyframes beAnimation{
+    0%{
+        background-position:0% 50%;
+    }
+    50%{
+        background-position:100% 50%;
+    }
+    100%{
+        background-position:0% 50%;
+    }
 }
 .title{
     font-family:PingFang SC;
-    font-size:58px;
+    font-size:80px;
     fill: none;
     stroke:url(#geekColor);
-    stroke-width:1;
+    stroke-width:2;
     stroke-dasharray:10 800;
     stroke-dashoffset:10;
-    animation:8s linear 0s drawing
+    animation:5s linear 0s drawing
         forwards
 }
 @keyframes drawing{
@@ -36,7 +46,7 @@ body{
     left:40%;
     width:300px;
     height:450px;
-    background-color:#5e5cfc;
+    background-color: #fad7a0;
     border-radius:10px;
     justify-content:space-evenly;
     align-items:center;
@@ -51,7 +61,7 @@ body{
 }
 .cards:hover .card{
     transform:rotate(calc(var(--i) * 4deg))
-                translate(calc(var(--i) * 200px),-100px);
+                translate(calc(var(--i) * 200px),-50px);
     cursor:pointer;
 
 }
@@ -63,4 +73,11 @@ body{
 }
 p{
     font-size:18px;
+}
+h2{
+	color:#000000;
+    font-size:30px;
+	margin: 20px;
+    font-family: 'Source Han Serif', 'Yu Mincho', serif;
+	background:linear-gradient(to left,rgba(0,0,0,0), #ffffff);
 }
