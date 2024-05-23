@@ -24,17 +24,17 @@ p.style="text-emphasis:sesame green";
 let div=document.querySelector('div#phototable');
 let taro=document.createElement('p');
 let img1=document.createElement('img');
-taro.src = 'taro.png';
+img1.src ='taro.png';
 taro.insertAdjacentElement('beforeend', img1);
 div.insertAdjacentElement('beforeend', taro);
 let jiro=document.createElement('p');
 let img2=document.createElement('img');
-jiro.src = 'jiro.png';
+img2.src = 'jiro.png';
 jiro.insertAdjacentElement('beforeend', img2);
 div.insertAdjacentElement('beforeend', jiro);
 let hanako=document.createElement('p');
 let img3=document.createElement('img');
-hanako.src = 'hanako.png';
+img3.src = 'hanako.png';
 hanako.insertAdjacentElement('beforeend', img3);
 div.insertAdjacentElement('beforeend', hanako);
 
@@ -45,3 +45,9 @@ for (let li of x) {
 }
 
 // 練習4-5 箇条書き追加プログラム
+let ul=document.querySelector('ul#location');
+for(let city of data){
+	let li=document.createElement('li');
+	li.textContent=city.name+'... 緯度: '+city.lat+', 経度: '+city.lng;
+	ul.insertAdjacentElement('beforeend',li);
+}
