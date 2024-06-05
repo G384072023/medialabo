@@ -4,50 +4,348 @@
         <meta charset="utf-8">
         <title>世界の天気</title>
         <link rel="stylesheet" href="project-style.css">
+        <script src="project.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
     </head>
-    <h1>世界の天気（検索結果1件）</h1>
-    <ul>
-        <img class="tennki" src="https://g384072023.github.io/medialabo/practice-html/world-forecast-top-0.jpg">
-    <li>都市名:上海市</li>
-    </ul>
-    <table>
-            <tr>
-                <th scope="col">上海の天気</th>
-                <td scope="col">5月7日</td>
-            </tr>
-        <tbody>
-            <tr>
-                <th scope="col">緯度</th>
-                <td>31.23</td>
-            </tr>
-            <tr>
-                <th scope="col">経度</th>
-                <td>121.47</td>
-            </tr>
-            <tr>
-                <th scope="col">天気</th>
-                <td><img class="晴時々曇" src="https://g384072023.github.io/medialabo/02.png">晴時々曇</td>
-            </tr>
-                <th scope="col">最低気温</th>
-                <td>19℃</td>
-            <tr>
-                <th scope="col">最高気温</th>
-                <td>24℃</td>
-            </tr>
-            <tr>
-                <th scope="col">湿度</th>
-                <td>70%</td>
-            </tr>
-            <tr>
-                <th scope="col">風速</th>
-                <td>2m/s</td>
-            </tr>
-                <th scope="col">風向</th>
-                <td>北西</td>
-            </tr>
-        </tbody>
-        <tfoot>
-        </tfoot>
-    </table>
-    <body><h4>参考:<a href="https://tenki.jp/" title="tenki.jp" target="_blank">tenki.jp</h4></body>
+<body>
+        <div class="title" onclick="changeBackground('素材/2012020409083904.gif')"><span class="title1">世界の天気</span><span class="title2">click</span></div>
+        <div class="cards-container">
+            <div class="cards">
+                <div class="cover" onmouseover="sendRequest(360630)">
+                <p>カイロ</p>（エジプト）<img src="素材/640px-Flag_of_Egypt.svg.png" width="100%" height="auto"></div>
+                <div class="back" onmouseover="changeBackground('素材/All_Gizah_Pyramids.jpg')">
+                    <table>
+                    <tbody>
+                    <tr>
+                        <th>都市名</th><td id="name_360630"></td>
+                    </tr>
+                        <th>天気</th><td id="weather_360630"></td>
+                    </tr>
+                    <tr>
+                        <th>最低気温</th><td id="min_360630"></td>
+                    </tr>
+                    <tr>
+                        <th>最高気温</th><td id="max_360630"></td>
+                    </tr>
+                    <tr>
+                        <th>湿度</th><td id="hum_360630"></td>
+                    </tr>
+                    <tr>
+                        <th>風速</th><td id="sp_360630"></td>
+                    </tr>
+                    <tr>
+                        <th>風向</th><td id="di_360630"></td>
+                    </tr>
+                    </tbody>
+                    </table>
+            </div></div>
+        <div class="cards">
+            <div class="cover" onmouseover="sendRequest(524901)"><p>モスクワ</p>（ロシア）<img src="素材/640px-Flag_of_Russia.svg.png" width="100%" height="auto"></div>
+            <div class="back" onmouseover="changeBackground('素材/1.png')">
+                <table>
+                    <tbody>
+                    <tr>
+                        <th>都市名</th><td id="name_524901"></td>
+                    </tr>
+                        <th>天気</th><td id="weather_524901"></td>
+                    </tr>
+                    <tr>
+                        <th>最低気温</th><td id="min_524901"></td>
+                    </tr>
+                    <tr>
+                        <th>最高気温</th><td id="max_524901"></td>
+                    </tr>
+                    <tr>
+                        <th>湿度</th><td id="hum_524901"></td>
+                    </tr>
+                    <tr>
+                        <th>風速</th><td id="sp_524901"></td>
+                    </tr>
+                    <tr>
+                        <th>風向</th><td id="di_524901"></td>
+                    </tr>
+                    </tbody>
+                    </table>
+                </div></div>
+        <div class="cards">
+            <div class="cover" onmouseover="sendRequest(993800)"> <p>ヨハネスブルク</p>（南アフリカ）<img src="素材/640px-Flag_of_South_Africa.svg.png" width="100%" height="auto"></div>
+            <div class="back" onmouseover="changeBackground('素材/ヨハネスブルク.jpg')">
+                <table>
+                    <tbody>
+                    <tr>
+                        <th>都市名</th><td id="name_993800"></td>
+                    </tr>
+                        <th>天気</th><td id="weather_993800"></td>
+                    </tr>
+                    <tr>
+                        <th>最低気温</th><td id="min_993800"></td>
+                    </tr>
+                    <tr>
+                        <th>最高気温</th><td id="max_993800"></td>
+                    </tr>
+                    <tr>
+                        <th>湿度</th><td id="hum_993800"></td>
+                    </tr>
+                    <tr>
+                        <th>風速</th><td id="sp_993800"></td>
+                    </tr>
+                    <tr>
+                        <th>風向</th><td id="di_993800"></td>
+                    </tr>
+                    </tbody>
+                    </table>
+            </div></div>
+        <div class="cards">
+            <div class="cover" onmouseover="sendRequest(1816670)"><p>北京</p>（中華人民共和国）<img src="素材/640px-Flag_of_the_People's_Republic_of_China.svg.webp" width="100%" height="auto"></div>
+            <div class="back" onmouseover="changeBackground('素材/Beijing_montage_2019.png')">
+                <table>
+                    <tbody>
+                    <tr>
+                        <th>都市名</th><td id="name_1816670"></td>
+                    </tr>
+                        <th>天気</th><td id="weather_1816670"></td>
+                    </tr>
+                    <tr>
+                        <th>最低気温</th><td id="min_1816670"></td>
+                    </tr>
+                    <tr>
+                        <th>最高気温</th><td id="max_1816670"></td>
+                    </tr>
+                    <tr>
+                        <th>湿度</th><td id="hum_1816670"></td>
+                    </tr>
+                    <tr>
+                        <th>風速</th><td id="sp_1816670"></td>
+                    </tr>
+                    <tr>
+                        <th>風向</th><td id="di_1816670"></td>
+                    </tr>
+                    </tbody>
+                    </table>
+                </div></div>
+        <div class="cards">
+            <div class="cover" onmouseover="sendRequest(1850147)"><p>東京</p>（日本）<img src="素材/640px-Flag_of_Japan.svg.png" width="100%" height="auto"></div>
+            <div class="back" onmouseover="changeBackground('素材/1c772257aea147b39021fdcc087c480b.jpeg')">
+                <table>
+                    <tbody>
+                    <tr>
+                        <th>都市名</th><td id="name_1850147"></td>
+                    </tr>
+                        <th>天気</th><td id="weather_1850147"></td>
+                    </tr>
+                    <tr>
+                        <th>最低気温</th><td id="min_1850147"></td>
+                    </tr>
+                    <tr>
+                        <th>最高気温</th><td id="max_1850147"></td>
+                    </tr>
+                    <tr>
+                        <th>湿度</th><td id="hum_1850147"></td>
+                    </tr>
+                    <tr>
+                        <th>風速</th><td id="sp_1850147"></td>
+                    </tr>
+                    <tr>
+                        <th>風向</th><td id="di_1850147"></td>
+                    </tr>
+                    </tbody>
+                    </table>
+                </div></div>
+        <div class="cards">
+            <div class="cover" onmouseover="sendRequest(1880252)"><p>シンガポール</p><img src="素材/640px-Flag_of_Singapore.svg.png" width="100%" height="auto"></div>
+            <div class="back" onmouseover="changeBackground('素材/20190826121349_m8N5v.jpeg')">
+                <table>
+                    <tbody>
+                    <tr>
+                        <th>都市名</th><td id="name_1880252"></td>
+                    </tr>
+                        <th>天気</th><td id="weather_1880252"></td>
+                    </tr>
+                    <tr>
+                        <th>最低気温</th><td id="min_1880252"></td>
+                    </tr>
+                    <tr>
+                        <th>最高気温</th><td id="max_1880252"></td>
+                    </tr>
+                    <tr>
+                        <th>湿度</th><td id="hum_1880252"></td>
+                    </tr>
+                    <tr>
+                        <th>風速</th><td id="sp_1880252"></td>
+                    </tr>
+                    <tr>
+                        <th>風向</th><td id="di_1880252"></td>
+                    </tr>
+                    </tbody>
+                    </table>
+                </div></div>
+        <div class="cards">
+            <div class="cover" onmouseover="sendRequest(2147714)"><p>シドニー</p>（オーストラリア）<img src="素材/640px-Flag_of_Australia.svg.png" width="100%" height="auto"></div>
+            <div class="back" onmouseover="changeBackground('素材/シドニー.jpg')">
+                <table>
+                    <tbody>
+                    <tr>
+                        <th>都市名</th><td id="name_2147714"></td>
+                    </tr>
+                        <th>天気</th><td id="weather_2147714"></td>
+                    </tr>
+                    <tr>
+                        <th>最低気温</th><td id="min_2147714"></td>
+                    </tr>
+                    <tr>
+                        <th>最高気温</th><td id="max_2147714"></td>
+                    </tr>
+                    <tr>
+                        <th>湿度</th><td id="hum_2147714"></td>
+                    </tr>
+                    <tr>
+                        <th>風速</th><td id="sp_2147714"></td>
+                    </tr>
+                    <tr>
+                        <th>風向</th><td id="di_2147714"></td>
+                    </tr>
+                    </tbody>
+                    </table>
+                </div></div>
+        <div class="cards">
+            <div class="cover" onmouseover="sendRequest(2643743)"><p>ロンドン</p>（イギリス）<img src="素材/640px-Flag_of_the_United_Kingdom_(3-5).svg.png" width="100%" height="auto"></div>
+            <div class="back" onmouseover="changeBackground('素材/ロンドン.jpg')">
+                <table>
+                    <tbody>
+                    <tr>
+                        <th>都市名</th><td id="name_2643743"></td>
+                    </tr>
+                        <th>天気</th><td id="weather_2643743"></td>
+                    </tr>
+                    <tr>
+                        <th>最低気温</th><td id="min_2643743"></td>
+                    </tr>
+                    <tr>
+                        <th>最高気温</th><td id="max_2643743"></td>
+                    </tr>
+                    <tr>
+                        <th>湿度</th><td id="hum_2643743"></td>
+                    </tr>
+                    <tr>
+                        <th>風速</th><td id="sp_2643743"></td>
+                    </tr>
+                    <tr>
+                        <th>風向</th><td id="di_2643743"></td>
+                    </tr>
+                    </tbody>
+                    </table></div></div>
+        <div class="cards">
+            <div class="cover" onmouseover="sendRequest(2968815)"><p>パリ</p>（フランス）<img src="素材/640px-Flag_of_France_(1794–1815,_1830–1974).svg.png" width="100%" height="auto"></div>
+            <div class="back" onmouseover="changeBackground('素材/Paris_-_Eiffelturm_und_Marsfeld2.jpg')">
+                <table>
+                    <tbody>
+                    <tr>
+                        <th>都市名</th><td id="name_2968815"></td>
+                    </tr>
+                        <th>天気</th><td id="weather_2968815"></td>
+                    </tr>
+                    <tr>
+                        <th>最低気温</th><td id="min_2968815"></td>
+                    </tr>
+                    <tr>
+                        <th>最高気温</th><td id="max_2968815"></td>
+                    </tr>
+                    <tr>
+                        <th>湿度</th><td id="hum_2968815"></td>
+                    </tr>
+                    <tr>
+                        <th>風速</th><td id="sp_2968815"></td>
+                    </tr>
+                    <tr>
+                        <th>風向</th><td id="di_2968815"></td>
+                    </tr>
+                    </tbody>
+                    </table>
+                </div></div>
+        <div class="cards">
+            <div class="cover" onmouseover="sendRequest(3451189)"><p>リオデジャネイロ</p>（ブラジル）<img src="素材/640px-Flag_of_Brazil.svg.png" width="100%" height="auto"></div>
+            <div class="back" onmouseover="changeBackground('素材/Rio_Collage.png')">                
+                <table>
+                <tbody>
+                <tr>
+                    <th>都市名</th><td id="name_3451189"></td>
+                </tr>
+                    <th>天気</th><td id="weather_3451189"></td>
+                </tr>
+                <tr>
+                    <th>最低気温</th><td id="min_3451189"></td>
+                </tr>
+                <tr>
+                    <th>最高気温</th><td id="max_3451189"></td>
+                </tr>
+                <tr>
+                    <th>湿度</th><td id="hum_3451189"></td>
+                </tr>
+                <tr>
+                    <th>風速</th><td id="sp_3451189"></td>
+                </tr>
+                <tr>
+                    <th>風向</th><td id="di_3451189"></td>
+                </tr>
+                </tbody>
+                </table>
+            </div></div>
+        <div class="cards">
+            <div class="cover" onmouseover="sendRequest(5128581)"><p>ニューヨーク</p>（アメリカ合衆国）<img src="素材/640px-Flag_of_the_United_States.svg.png" width="100%" height="auto"></div>
+            <div class="back" onmouseover="changeBackground('素材/NYC_Montage_2011.jpg')">                
+                <table>
+                <tbody>
+                <tr>
+                    <th>都市名</th><td id="name_5128581"></td>
+                </tr>
+                    <th>天気</th><td id="weather_5128581"></td>
+                </tr>
+                <tr>
+                    <th>最低気温</th><td id="min_5128581"></td>
+                </tr>
+                <tr>
+                    <th>最高気温</th><td id="max_5128581"></td>
+                </tr>
+                <tr>
+                    <th>湿度</th><td id="hum_5128581"></td>
+                </tr>
+                <tr>
+                    <th>風速</th><td id="sp_5128581"></td>
+                </tr>
+                <tr>
+                    <th>風向</th><td id="di_5128581"></td>
+                </tr>
+                </tbody>
+                </table>
+            </div></div>
+        <div class="cards">
+            <div class="cover" onmouseover="sendRequest(5368361)"><p>ロサンゼルス</p>（アメリカ合衆国）<img src="素材/640px-Flag_of_the_United_States.svg.png" width="100%" height="auto"></div>
+            <div class="back" onmouseover="changeBackground('素材/TE-Collage_Los_Angeles.png')">                
+                <table>
+                <tbody>
+                <tr>
+                    <th>都市名</th><td id="name_5368361"></td>
+                </tr>
+                    <th>天気</th><td id="weather_5368361"></td>
+                </tr>
+                <tr>
+                    <th>最低気温</th><td id="min_5368361"></td>
+                </tr>
+                <tr>
+                    <th>最高気温</th><td id="max_5368361"></td>
+                </tr>
+                <tr>
+                    <th>湿度</th><td id="hum_5368361"></td>
+                </tr>
+                <tr>
+                    <th>風速</th><td id="sp_5368361"></td>
+                </tr>
+                <tr>
+                    <th>風向</th><td id="di_5368361"></td>
+                </tr>
+                </tbody>
+                </table>
+            </div></div>
+        </div>
+</body>
 </html>
