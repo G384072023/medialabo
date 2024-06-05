@@ -45,7 +45,7 @@ body {
 .cards-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 100px;
+    gap: 50px;
     width: 150vh;
 	height:800vh;
     max-width: 1500vh;
