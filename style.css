@@ -50,7 +50,7 @@ body{
     border-radius:10px;
     justify-content:space-evenly;
     align-items:center;
-    color:black;
+    color:#fff;
     font-size:30px;
     font-weight:700;
     border:10px solid rgba(0,0,0,.1);
@@ -59,18 +59,19 @@ body{
     filter:hue-rotate(calc(var(--i) * 36deg));
     
 }
-.cards:hover .card{
-    transform:rotate(calc(var(--i) * 4deg))
-                translate(calc(var(--i) * 200px),-50px);
-    cursor:pointer;
+    .cards:hover .card{
+        transform:rotate(calc(var(--i) * 4deg))
+                    translate(calc(var(--i) * 200px),-50px);
+        cursor:pointer;
+    }
+    .cards .card.active {
+        background-color: #eab759;
+        z-index: 500;
+        color: #000000;
+    transition: transform 0.5s ease, background-color 0.5s ease, color 0.5s ease;
+}
 
-}
-.cards:active .card:not(:active){
-    background-color: #333;
-}
-.cards .card:active{
-    z-index:999;
-}
+
 p{
     font-size:18px;
 }
