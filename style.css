@@ -1,10 +1,12 @@
 body{
-    background:linear-gradient( 109.6deg,  rgba(254,253,205,1) , rgba(163,230,255,1),rgba(249,213,213,1));
-    background-size: 500%;
+    background:linear-gradient( 109.6deg,  rgb(57,159,145) , rgb(206,220,247),rgb(46,109,202));
+    background-size: 2000%;
     margin:0;
     padding:0;
-    height:140vh;
+    height:auto;
+    overflow-x:hidden;
     animation: beAnimation 15s linear infinite;
+    transition: height 1s ease-in-out;
 }
 @keyframes beAnimation{
     0%{
@@ -16,6 +18,39 @@ body{
     100%{
         background-position:0% 50%;
     }
+}
+.background{
+    background-image: url("素材/HVqJp6jl.jpg");
+    background-size: cover;
+    background-position: 50% 50%;
+    height:120vh;
+    font:900 39rem '';
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+.background::before{
+    content: '';
+    background-size: cover;
+    background-image: inherit;
+    background-position: 50% 50%;
+    position: absolute;
+    top:0;
+    left: 0;
+    bottom: 0;
+    right:0;
+    z-index: -1;
+}
+.web{
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    text-align: center;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0, 0); /* 半透明背景，便于可读性 */
 }
 .title{
     font-family:PingFang SC;
@@ -43,9 +78,9 @@ body{
 .cards .card{
     min-height:100px;
     position:absolute;
-    left:40%;
-    width:300px;
-    height:450px;
+    left:38%;
+    width:320px;
+    height:500px;
     background-color: #e3c491f4;
     border-radius:10px;
     justify-content:space-evenly;
@@ -61,7 +96,7 @@ body{
 }
     .cards:hover .card{
         transform:rotate(calc(var(--i) * 4deg))
-                    translate(calc(var(--i) * 200px),-50px);
+                    translate(calc(var(--i) * 190px),-40px);
         cursor:pointer;
     }
     .cards .card.active {
@@ -74,6 +109,8 @@ body{
 
 p{
     font-size:18px;
+    text-align: justify;
+    padding:20px;
 }
 h2{
 	color:#000000;
@@ -81,4 +118,106 @@ h2{
 	margin: 20px;
     font-family: 'Source Han Serif', 'Yu Mincho', serif;
 	background:linear-gradient(to left,rgba(0,0,0,0), #ffffff);
+    padding:20px;
+    text-align: center;
+}
+
+.text-content {
+    margin-top: 500px;
+    position: relative;
+    padding:20px;
+  }
+
+.highlight {
+    background: linear-gradient(270deg, #ff6ec4, #7873f5, #6eb6ff, #6efbff);
+    background-size: 600% 600%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow 5s ease infinite;
+    border: 1px solid black;
+    font-size: 28px;
+}
+@keyframes rainbow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+  
+  .shark-container {
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin-left: 50vh;
+    display: inline-block;
+}
+.shark-text {
+    position: absolute;
+    top: 50%;
+    left: 110%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 5px 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+}
+.shark-text::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    transform: translateY(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #000 transparent transparent;
+}
+#smallshark {
+    width: 250px; 
+    height: auto; 
+}
+#shark {
+    display: none;
+    position: fixed;
+    bottom: -100vh;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+}
+
+@keyframes slideFromBottom {
+    from {
+        bottom: -100vh;
+    }
+    to {
+        bottom: 0;
+    }
+}
+
+@keyframes slideFromTop {
+    from {
+        bottom: 0;
+    }
+    to {
+        bottom: -100vh;
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
